@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.authors = ["Mike Subelsky"]
   s.date = Time.now.utc.strftime("%Y-%m-%d")
   s.email = %q{mike@subelsky.com}
-  s.extra_rdoc_files = %w(README.markdown)
+  s.extra_rdoc_files = %w(README.md)
   s.files = `git ls-files`.split("\n")
   s.homepage = %q{http://github.com/subelsky/broadcast_calendar}
   s.rdoc_options = ["--charset=UTF-8"]
