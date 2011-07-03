@@ -46,10 +46,20 @@ describe BroadcastCalendar do
     }
   }
   
-  it "converts 2010 dates" do
+  it "converts months and years to ranges" do
     dates.each do |year,months|
       months.each do |month,range|
         BroadcastCalendar.dates_for(month,year).should == range
+      end
+    end
+  end
+
+  it "returns the broadcast month and year for a given year" do
+    dates.each do |year,months|
+      months.each do |month,range|
+        range.each do |date|
+          BroadcastCalendar.month_and_year_for(date).should == [month,year]
+        end
       end
     end
   end

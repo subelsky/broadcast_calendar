@@ -18,4 +18,24 @@ module BroadcastCalendar
 
     beginning..ending
   end
+
+  def month_and_year_for(date)
+    range = dates_for(date.month,date.year)
+
+    month = date.month
+    year = date.year
+
+    unless range.cover?(date)
+      month += (date <=> range.begin)
+      if month < 1
+        month = 12
+        year -= 1
+      elsif month > 12
+        month = 1
+        year += 1
+      end
+    end
+
+    [month,year]
+  end
 end
