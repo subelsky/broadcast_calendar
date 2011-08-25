@@ -63,4 +63,21 @@ describe BroadcastCalendar do
       end
     end
   end
+
+  it "returns broadcast weeks for a given month and year" do
+    weeks = BroadcastCalendar.weeks_for(7,2011)
+    weeks[0].should == (Date.new(2011,6,27)..Date.new(2011,7,3))
+    weeks[1].should == (Date.new(2011,7,4)..Date.new(2011,7,10))
+    weeks[2].should == (Date.new(2011,7,11)..Date.new(2011,7,17))
+    weeks[3].should == (Date.new(2011,7,18)..Date.new(2011,7,24))
+    weeks[4].should == (Date.new(2011,7,25)..Date.new(2011,7,31))
+
+    weeks = BroadcastCalendar.weeks_for(8,2010)
+    weeks[0].should == (Date.new(2010,7,26)..Date.new(2010,8,1))
+    weeks[1].should == (Date.new(2010,8,2)..Date.new(2010,8,8))
+    weeks[2].should == (Date.new(2010,8,9)..Date.new(2010,8,15))
+    weeks[3].should == (Date.new(2010,8,16)..Date.new(2010,8,22))
+    weeks[4].should == (Date.new(2010,8,23)..Date.new(2010,8,29))
+  end
+  
 end

@@ -19,6 +19,10 @@ module BroadcastCalendar
     beginning..ending
   end
 
+  def weeks_for(month,year)
+    dates_for(month,year).each_slice(7).collect { |s| s.first..s.last }
+  end
+
   def month_and_year_for(date)
     range = dates_for(date.month,date.year)
 
