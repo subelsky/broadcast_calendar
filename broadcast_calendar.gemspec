@@ -12,9 +12,9 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/subelsky/broadcast_calendar}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.summary = %q{Returns the beginning and ending Gregorian (civil) dates for months in the broadcast calendar.}
-  s.description = %q{Library tht returns the beginning and ending Gregorian (civil) dates for months in the broadcast calendar.}
+  s.summary = %q{Returns the beginning and ending Gregorian (civil) dates for months or weeks in the broadcast calendar.}
+  s.description = %q{Library tht returns the beginning and ending Gregorian (civil) dates for months or weeks in the broadcast calendar.}
   s.test_files = `git ls-files spec`.split("\n")
-  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rspec', '>= 3.3.0'
   s.license = "MIT"
 end
